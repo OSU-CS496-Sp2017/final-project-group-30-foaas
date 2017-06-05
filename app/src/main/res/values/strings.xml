@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">Group 30 - FOAAS</string>
+    <string name="loading_error_message">Woops.  We couldn\'t complete your search.  Check your internet connection and try again.</string>
+    <string name="action_share">Share insult</string>
+    <string name="action_view_repo">View this repo on GitHub</string>
+    <string name="share_chooser_title">Pick an app to share this insult</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="pref_sort_key">pref_sort</string>
+    <string name="pref_sort_title">Sort by</string>
+    <string name="pref_sort_default">stars</string>
+
+    <string name="pref_language_key">pref_language</string>
+    <string name="pref_language_title">Programming language</string>
+    <string name="pref_language_default"></string>
+
+    <string name="pref_in_title">Search in</string>
+    <string name="pref_in_name_key">pref_in_name</string>
+    <string name="pref_in_name_title">Search in name</string>
+    <string name="pref_in_description_key">pref_in_description</string>
+    <string name="pref_in_description_title">Search in description</string>
+    <string name="pref_in_readme_key">pref_in_readme</string>
+    <string name="pref_in_readme_title">Search in README</string>
+
+    <string name="pref_user_key">pref_user</string>
+    <string name="pref_user_title">GitHub user</string>
+</resources>
