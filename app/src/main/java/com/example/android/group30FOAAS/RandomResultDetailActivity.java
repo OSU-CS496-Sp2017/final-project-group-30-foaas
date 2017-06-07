@@ -2,16 +2,16 @@ package com.example.android.group30FOAAS;
 
 import android.content.Intent;
 import android.net.Uri;
+import android.os.Bundle;
 import android.support.v4.app.ShareCompat;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
 
 import com.example.android.group30FOAAS.utils.FOAASUtils;
 
-public class SearchResultDetailActivity extends AppCompatActivity {
+public class RandomResultDetailActivity extends AppCompatActivity {
     private TextView mSearchResultNameTV;
     private TextView mSearchResultDescriptionTV;
     private TextView mSearchResultStarsTV;

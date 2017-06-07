@@ -108,7 +108,7 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     public void onSearchResultClick(FOAASUtils.SearchResult searchResult) {
-        Intent intent = new Intent(this, SearchResultDetailActivity.class);
+        Intent intent = new Intent(this, ListResultDetailActivity.class);
         intent.putExtra(FOAASUtils.SearchResult.EXTRA_SEARCH_RESULT, searchResult);
         startActivity(intent);
     }

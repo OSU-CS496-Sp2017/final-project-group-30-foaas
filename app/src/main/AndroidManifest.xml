@@ -21,7 +21,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.example.android.group30FOAAS.SearchResultDetailActivity"
+            android:name="com.example.android.group30FOAAS.ListResultDetailActivity"
             android:parentActivityName="com.example.android.group30FOAAS.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
