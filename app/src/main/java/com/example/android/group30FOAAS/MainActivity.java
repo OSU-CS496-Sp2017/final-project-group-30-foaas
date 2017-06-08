@@ -53,6 +53,8 @@ public class MainActivity extends AppCompatActivity
         mSearchResultsRV.setHasFixedSize(true);
 
         mFOAASSearchAdapter = new FOAASSearchAdapter(this);
+        //mFOAASPersonalSearchAdapter = new FOAASPersonalSearchAdapter(this);
+        //mFOAASRandomPersonalSearchAdapter = new FOAASRandomSearchAdapter(this);
         mSearchResultsRV.setAdapter(mFOAASSearchAdapter);
 
         getSupportLoaderManager().initLoader(GITHUB_SEARCH_LOADER_ID, null, this);
