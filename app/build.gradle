@@ -4,7 +4,7 @@ android {
     compileSdkVersion 25
     buildToolsVersion "25.0.2"
     defaultConfig {
-        applicationId "com.example.android.githubsearchwithintents"
+        applicationId "com.example.android.group30FOAAS"
         minSdkVersion 15
         targetSdkVersion 25
         versionCode 1
