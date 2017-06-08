@@ -108,11 +108,23 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     public void onSearchResultClick(FOAASUtils.SearchResult searchResult) {
+        /*if(Personal result button){
+        Intent intent = new Intent(this, PersonalResultDetailActivity.class);
+        intent.putExtra(FOAASUtils.SearchResult.EXTRA_SEARCH_RESULT, searchResult);
+        startActivity(intent);
+        */
+        /*if(random result button){
+        Intent intent = new Intent(this, RandomResultDetailActivity.class);
+        intent.putExtra(FOAASUtils.SearchResult.EXTRA_SEARCH_RESULT, searchResult);
+        startActivity(intent);
+        */
+
+        //if(List result button){
         Intent intent = new Intent(this, ListResultDetailActivity.class);
         intent.putExtra(FOAASUtils.SearchResult.EXTRA_SEARCH_RESULT, searchResult);
         startActivity(intent);
+        //}
     }
-
     @Override
     public Loader<String> onCreateLoader(int id, final Bundle args) {
         return new AsyncTaskLoader<String>(this) {
