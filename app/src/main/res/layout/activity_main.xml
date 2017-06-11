@@ -13,13 +13,25 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="24sp"
-        android:hint="Search GitHub..."/>
+        android:hint="Enter a name to insult."/>
 
     <Button
         android:id="@+id/btn_search"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Do Search"
+        android:text="Search"
+        android:textSize="22sp"/>
+    <Button
+        android:id="@+id/btn_random"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Random insult"
+        android:textSize="22sp"/>
+    <Button
+        android:id="@+id/btn_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="List of insults"
         android:textSize="22sp"/>
 
     <FrameLayout
