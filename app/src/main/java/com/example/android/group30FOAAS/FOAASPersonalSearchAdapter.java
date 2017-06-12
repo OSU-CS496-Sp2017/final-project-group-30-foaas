@@ -58,7 +58,7 @@ public class FOAASPersonalSearchAdapter extends RecyclerView.Adapter<FOAASPerson
         }
 
         public void bind(FOAASUtils.SearchResult searchResult) {
-            mSearchResultTV.setText(searchResult.fullName);
+            mSearchResultTV.setText(searchResult.subtitle);
         }
 
         @Override

@@ -100,8 +100,11 @@ public class MainActivity extends AppCompatActivity
         boolean searchInDescription = sharedPreferences.getBoolean(getString(R.string.pref_in_description_key), true);
         boolean searchInReadme = sharedPreferences.getBoolean(getString(R.string.pref_in_readme_key), false);
 
-        String githubSearchUrl = FOAASUtils.buildFOAASURL(searchQuery, sort, language, user,
-                searchInName, searchInDescription, searchInReadme);
+        //TESTING VARS
+        String type = "bag";
+        String name = "";
+        String from = "me";
+        String githubSearchUrl = FOAASUtils.buildFOAASURL(type, name,  from);
 
         Bundle argsBundle = new Bundle();
         argsBundle.putString(SEARCH_URL_KEY, githubSearchUrl);
