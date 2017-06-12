@@ -10,7 +10,7 @@ import com.example.android.group30FOAAS.utils.FOAASUtils;
 
 import java.util.ArrayList;
 
-public class FOAASPersonalSearchAdapter extends RecyclerView.Adapter<FOAASPersonalSearchAdapter.SearchResultViewHolder> {
+class FOAASPersonalSearchAdapter extends RecyclerView.Adapter<FOAASPersonalSearchAdapter.SearchResultViewHolder> {
     private ArrayList<FOAASUtils.SearchResult> mSearchResultsList;
     private OnSearchResultClickListener mSearchResultClickListener;
 

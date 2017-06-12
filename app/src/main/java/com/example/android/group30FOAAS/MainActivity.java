@@ -27,7 +27,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity
-        implements FOAASSearchAdapter.OnSearchResultClickListener, LoaderManager.LoaderCallbacks<String> {
+        implements FOAASPersonalSearchAdapter.OnSearchResultClickListener, FOAASRandomSearchAdapter.OnSearchResultClickListener, FOAASSearchAdapter.OnSearchResultClickListener, LoaderManager.LoaderCallbacks<String> {
 
     private static final String TAG = MainActivity.class.getSimpleName();
     private static final String SEARCH_URL_KEY = "githubSearchURL";
@@ -38,6 +38,8 @@ public class MainActivity extends AppCompatActivity
     private ProgressBar mLoadingIndicatorPB;
     private TextView mLoadingErrorMessageTV;
     private FOAASSearchAdapter mFOAASSearchAdapter;
+    private FOAASPersonalSearchAdapter mFOAASPersonalSearchAdapter;
+    private FOAASRandomSearchAdapter mFOAASRandomSearchAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,6 +69,20 @@ public class MainActivity extends AppCompatActivity
                 if (!TextUtils.isEmpty(searchQuery)) {
                     doGitHubSearch(searchQuery);
                 }
+            }
+        });
+        Button randomSearchButton = (Button)findViewById(R.id.btn_random);
+        randomSearchButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.d(TAG, "onClick: RANDOMBUTTON");
+            }
+        });
+        Button listSearchButton = (Button)findViewById(R.id.btn_list);
+        listSearchButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.d(TAG, "onClick: LISTBUTTON");
             }
         });
     }
