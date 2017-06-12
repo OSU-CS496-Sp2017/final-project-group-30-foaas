@@ -1,7 +1,7 @@
 package com.example.android.group30FOAAS.utils;
 
 import android.net.Uri;
-import android.text.TextUtils;
+import android.util.Log;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -12,77 +12,55 @@ import java.util.ArrayList;
 
 
 public class FOAASUtils {
+    private static final String TAG = FOAASUtils.class.getSimpleName();
 
-    private final static String GITHUB_SEARCH_BASE_URL = "https://api.github.com/search/repositories";
-    private final static String GITHUB_SEARCH_QUERY_PARAM = "q";
-    private final static String GITHUB_SEARCH_SORT_PARAM = "sort";
-    private final static String GITHUB_SEARCH_LANGUAGE_PARAM = "language";
-    private final static String GITHUB_SEARCH_USER_PARAM = "user";
-    private final static String GITHUB_SEARCH_IN_PARAM = "in";
-    private final static String GITHUB_SEARCH_IN_NAME = "name";
-    private final static String GITHUB_SEARCH_IN_DESCRIPTION = "description";
-    private final static String GITHUB_SEARCH_IN_README = "readme";
+
+    //Variables for query
+    private final static String FOAAS_URL = "http://foaas.com";
+
 
     public static class SearchResult implements Serializable {
         public static final String EXTRA_SEARCH_RESULT = "FOAASUtils.SearchResult";
-        public String fullName;
-        public String description;
-        public String htmlURL;
-        public int stars;
+        public String message;
+        public String subtitle;
     }
 
-    public static String buildGitHubSearchURL(String searchQuery, String sort, String language,
-                                              String user, boolean searchInName,
-                                              boolean searchInDescription, boolean searchInReadme) {
+    public static String buildFOAASURL(String type, String name, String from) {
+        Uri.Builder builder = Uri.parse(FOAAS_URL).buildUpon();
 
-        Uri.Builder builder = Uri.parse(GITHUB_SEARCH_BASE_URL).buildUpon();
-
-        if (!sort.equals("")) {
-            builder.appendQueryParameter(GITHUB_SEARCH_SORT_PARAM, sort);
-        }
-
-        String queryValue = searchQuery;
-        if (!language.equals("")) {
-            queryValue += " " + GITHUB_SEARCH_LANGUAGE_PARAM + ":" + language;
+        if(!type.equals("")) {
+            builder.path(type);
+        } else {
+            Log.d(TAG, "ERROR: URI BUILD - Type contains nothing");
         }
 
-        if (!user.equals("")) {
-            queryValue += " " + GITHUB_SEARCH_USER_PARAM + ":" + user;
+        if(!name.equals("")) {
+            builder.appendPath(":" + name);
         }
 
-        ArrayList searchIn = new ArrayList<String>();
-        if (searchInName) {
-            searchIn.add(GITHUB_SEARCH_IN_NAME);
+        if(!from.equals("")) {
+            builder.appendPath(":" + from);
+        } else {
+            Log.d(TAG, "ERROR: URI BUILD - From contains nothing");
         }
-        if (searchInDescription) {
-            searchIn.add(GITHUB_SEARCH_IN_DESCRIPTION);
-        }
-        if (searchInReadme) {
-            searchIn.add(GITHUB_SEARCH_IN_README);
-        }
-        if (!searchIn.isEmpty()) {
-            queryValue += " " + GITHUB_SEARCH_IN_PARAM + ":" + TextUtils.join(",", searchIn);
-        }
-
-        builder.appendQueryParameter(GITHUB_SEARCH_QUERY_PARAM, queryValue);
 
         return builder.build().toString();
     }
 
-    public static ArrayList<SearchResult> parseGitHubSearchResultsJSON(String searchResultsJSON) {
+    public static ArrayList<SearchResult> parseFOAASResultsJSON(String searchResultsJSON) {
         try {
             JSONObject searchResultsObj = new JSONObject(searchResultsJSON);
             JSONArray searchResultsItems = searchResultsObj.getJSONArray("items");
 
             ArrayList<SearchResult> searchResultsList = new ArrayList<SearchResult>();
+
             for (int i = 0; i < searchResultsItems.length(); i++) {
                 SearchResult searchResult = new SearchResult();
                 JSONObject searchResultItem = searchResultsItems.getJSONObject(i);
-                searchResult.fullName = searchResultItem.getString("full_name");
-                searchResult.description = searchResultItem.getString("description");
-                searchResult.htmlURL = searchResultItem.getString("html_url");
-                searchResult.stars = searchResultItem.getInt("stargazers_count");
+                searchResult.message = searchResultItem.getString("message");
+                searchResult.subtitle = searchResultItem.getString("subtitle");
                 searchResultsList.add(searchResult);
+                Log.d(TAG, "VALID RUN: Json Response = " + searchResult);
             }
             return searchResultsList;
         } catch (JSONException e) {

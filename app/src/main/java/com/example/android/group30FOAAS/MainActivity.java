@@ -100,8 +100,11 @@ public class MainActivity extends AppCompatActivity
         boolean searchInDescription = sharedPreferences.getBoolean(getString(R.string.pref_in_description_key), true);
         boolean searchInReadme = sharedPreferences.getBoolean(getString(R.string.pref_in_readme_key), false);
 
-        String githubSearchUrl = FOAASUtils.buildGitHubSearchURL(searchQuery, sort, language, user,
-                searchInName, searchInDescription, searchInReadme);
+        //TESTING VARS
+        String type = "bag";
+        String name = "";
+        String from = "me";
+        String githubSearchUrl = FOAASUtils.buildFOAASURL(type, name,  from);
 
         Bundle argsBundle = new Bundle();
         argsBundle.putString(SEARCH_URL_KEY, githubSearchUrl);
@@ -180,7 +183,7 @@ public class MainActivity extends AppCompatActivity
         if (data != null) {
             mLoadingErrorMessageTV.setVisibility(View.INVISIBLE);
             mSearchResultsRV.setVisibility(View.VISIBLE);
-            ArrayList<FOAASUtils.SearchResult> searchResultsList = FOAASUtils.parseGitHubSearchResultsJSON(data);
+            ArrayList<FOAASUtils.SearchResult> searchResultsList = FOAASUtils.parseFOAASResultsJSON(data);
             mFOAASSearchAdapter.updateSearchResults(searchResultsList);
         } else {
             mSearchResultsRV.setVisibility(View.INVISIBLE);

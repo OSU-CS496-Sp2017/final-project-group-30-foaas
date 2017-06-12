@@ -1,6 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:weightSum="1">
+
+    <Spinner
+        android:id="@+id/insult_type"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:visibility="visible"
+        android:layout_weight="0.10" />
+
+    <Spinner
+        android:id="@+id/person_insulting"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.12"
+        android:visibility="visible" />
+
+    <EditText
+        android:id="@+id/custom_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:contentDescription="input a custom message"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Custom Message..." />
+
+    <Button
+        android:id="@+id/generate_personal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Generate!" />
 
 </LinearLayout>

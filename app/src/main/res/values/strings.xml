@@ -24,4 +24,12 @@
 
     <string name="pref_user_key">pref_user</string>
     <string name="pref_user_title">GitHub user</string>
+    <string name="day_mode">Day Mode</string>
+
+    <string-array name="insult_type_array">
+        <item>Birthday</item>
+        <item>Friendly</item>
+        <item>Punny</item>
+        <item>Custom</item>
+    </string-array>
 </resources>

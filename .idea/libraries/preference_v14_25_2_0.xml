@@ -1,12 +1,12 @@
 <component name="libraryTable">
   <library name="preference-v14-25.2.0">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.android/build-cache/b020c1943f1f1cabf805f5956c9f726960ab4f0e/output/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.android/build-cache/b020c1943f1f1cabf805f5956c9f726960ab4f0e/output/res" />
+      <root url="file://$USER_HOME$/.android/build-cache/83009649016f42f7f71c808d820eb7da1ecfbfff/output/res" />
+      <root url="jar://$USER_HOME$/.android/build-cache/83009649016f42f7f71c808d820eb7da1ecfbfff/output/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
-      <root url="jar://$USER_HOME$/Library/Android/sdk/extras/android/m2repository/com/android/support/preference-v14/25.2.0/preference-v14-25.2.0-sources.jar!/" />
+      <root url="jar://$USER_HOME$/Android/Sdk/extras/android/m2repository/com/android/support/preference-v14/25.2.0/preference-v14-25.2.0-sources.jar!/" />
     </SOURCES>
   </library>
 </component>
