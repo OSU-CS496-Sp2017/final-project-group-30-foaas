@@ -68,6 +68,7 @@ public class MainActivity extends AppCompatActivity
             public void onClick(View v) {
                 String searchQuery = mSearchBoxET.getText().toString();
                 if (!TextUtils.isEmpty(searchQuery)) {
+                    startActivity(new Intent(MainActivity.this, PersonalResultDetailActivity.class));
                     doGitHubSearch(searchQuery);
                 }
             }
