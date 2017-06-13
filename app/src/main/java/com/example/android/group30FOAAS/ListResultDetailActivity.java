@@ -19,7 +19,7 @@ public class ListResultDetailActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_search_result_detail);
+        setContentView(R.layout.activity_list_list);
 
         mSubtitleTV = (TextView)findViewById(R.id.tv_subtitle);
 

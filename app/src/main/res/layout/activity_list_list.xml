@@ -6,14 +6,19 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="8sp"
-    tools:context="com.example.android.group30FOAAS.RandomResultDetailActivity">>
+    tools:context="com.example.android.group30FOAAS.ListResultDetailActivity">
+
+    <Spinner
+        android:id="@+id/insult_type"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:visibility="visible"
+        android:layout_weight="0.10" />
 
     <Button
-        android:id="@+id/button"
-        style="@android:style/Widget.Material.Button.Colored"
+        android:id="@+id/generate_list"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="0.25"
-        android:text="Random Insult!"
-        tools:targetApi="m" />
+        android:text="Generate!" />
+
 </LinearLayout>
