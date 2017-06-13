@@ -25,6 +25,7 @@ import com.example.android.group30FOAAS.utils.NetworkUtils;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Random;
 
 public class MainActivity extends AppCompatActivity
         implements FOAASPersonalSearchAdapter.OnSearchResultClickListener, FOAASRandomSearchAdapter.OnSearchResultClickListener, FOAASSearchAdapter.OnSearchResultClickListener, LoaderManager.LoaderCallbacks<String> {
@@ -76,7 +77,7 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void onClick(View v) {
                 Log.d(TAG, "onClick: RANDOMBUTTON");
-                startActivity(new Intent(MainActivity.this, PersonalResultDetailActivity.class));
+                startActivity(new Intent(MainActivity.this, RandomResultDetailActivity.class));
             }
         });
         Button listSearchButton = (Button)findViewById(R.id.btn_list);
@@ -84,7 +85,7 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void onClick(View v) {
                 Log.d(TAG, "onClick: LISTBUTTON");
-                startActivity(new Intent(MainActivity.this, RandomResultDetailActivity.class));
+                startActivity(new Intent(MainActivity.this, ListResultDetailActivity.class));
             }
         });
     }
