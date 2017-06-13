@@ -84,7 +84,7 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void onClick(View v) {
                 Log.d(TAG, "onClick: LISTBUTTON");
-                startActivity(new Intent(MainActivity.this, PersonalResultDetailActivity.class));
+                startActivity(new Intent(MainActivity.this, RandomResultDetailActivity.class));
             }
         });
     }
@@ -133,20 +133,6 @@ public class MainActivity extends AppCompatActivity
     public void onSearchResultClick(FOAASUtils.SearchResult searchResult) {
         Intent intent = new Intent(this, ListResultDetailActivity.class);
         intent.putExtra(FOAASUtils.SearchResult.EXTRA_SEARCH_RESULT, searchResult);
-        startActivity(intent);
-    }
-
-    public void onPersonalResultClick(FOAASUtils.SearchResult searchResult) {
-
-        Intent intent = new Intent(this, PersonalResultDetailActivity.class);
-        //intent.putExtra(FOAASUtils.SearchResult.EXTRA_SEARCH_RESULT, searchResult);
-        startActivity(intent);
-
-    }
-
-    public void onRandomResultClick(FOAASUtils.SearchResult searchResult) {
-        Intent intent = new Intent(this, RandomResultDetailActivity.class);
-        //intent.putExtra(FOAASUtils.SearchResult.EXTRA_SEARCH_RESULT, searchResult);
         startActivity(intent);
     }
 
