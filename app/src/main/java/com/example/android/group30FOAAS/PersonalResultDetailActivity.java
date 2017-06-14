@@ -2,6 +2,7 @@ package com.example.android.group30FOAAS;
 
 import android.content.Intent;
 import android.support.v4.app.LoaderManager;
+import android.support.v4.app.ShareCompat;
 import android.support.v4.content.AsyncTaskLoader;
 import android.support.v4.content.Loader;
 import android.support.v7.app.AppCompatActivity;
@@ -119,11 +120,13 @@ public class PersonalResultDetailActivity extends AppCompatActivity
     public void shareRepo() {
         //if (mSearchResult != null) {
         //    String shareText = mSearchResult.fullName + ": " + mSearchResult.htmlURL;
-        //    ShareCompat.IntentBuilder.from(this)
-        //            .setType("text/plain")
-        //           .setText(shareText)
-        //            .setChooserTitle(R.string.share_chooser_title)
-        //            .startChooser();
+        String shareText = "HI! I'm sharing!";
+
+        ShareCompat.IntentBuilder.from(this)
+                    .setType("text/plain")
+                   .setText(shareText)
+                    .setChooserTitle(R.string.share_chooser_title)
+                    .startChooser();
         //}
     }
 

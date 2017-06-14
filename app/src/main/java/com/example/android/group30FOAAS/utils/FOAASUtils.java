@@ -23,6 +23,7 @@ public class FOAASUtils {
         public static final String EXTRA_SEARCH_RESULT = "FOAASUtils.SearchResult";
         public String message;
         public String subtitle;
+
     }
 
     public static String buildFOAASURL(String type, String name, String from) {
@@ -48,6 +49,7 @@ public class FOAASUtils {
     }
 
     public static ArrayList<SearchResult> parseFOAASResultsJSON(String searchResultsJSON) {
+
         try {
             JSONObject searchResultsObj = new JSONObject(searchResultsJSON);
             JSONArray searchResultsItems = searchResultsObj.getJSONArray("items");
