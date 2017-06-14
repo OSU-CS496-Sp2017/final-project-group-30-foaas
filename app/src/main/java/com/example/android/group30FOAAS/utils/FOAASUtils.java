@@ -24,6 +24,7 @@ public class FOAASUtils {
         public static final String EXTRA_SEARCH_RESULT = "FOAASUtils.SearchResult";
         public String message;
         public String subtitle;
+
     }
 
     public static String buildFOAASURL(String type, String name, String from) {
