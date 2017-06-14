@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="8sp"
-    tools:context="com.example.android.group30FOAAS.RandomResultDetailActivity">>
+    tools:context="com.example.android.group30FOAAS.RandomResultDetailActivity">
 
     <Button
         android:id="@+id/button"

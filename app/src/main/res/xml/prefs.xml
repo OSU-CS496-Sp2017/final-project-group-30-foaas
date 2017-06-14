@@ -5,7 +5,8 @@
     <!-- New Prefs -->
     <EditTextPreference
         android:key="@string/pref_user_name_key"
-        android:title="@string/pref_user_name_title"/>
+        android:title="@string/pref_user_name_title"
+        android:text="name..."/>
 
     <CheckBoxPreference
         android:key="@string/pref_filter_key"
