@@ -2,6 +2,17 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+    <!-- New Prefs -->
+    <EditTextPreference
+        android:key="@string/pref_user_name_key"
+        android:title="@string/pref_user_name_title"/>
+
+    <CheckBoxPreference
+        android:key="@string/pref_filter_key"
+        android:title="@string/pref_filter_title"
+        android:defaultValue="false"/>
+
+    <!-- OLD Refactor
     <ListPreference
         android:key="@string/pref_sort_key"
         android:title="@string/pref_sort_title"
@@ -38,5 +49,6 @@
             android:title="@string/pref_in_readme_title"
             android:defaultValue="false" />
     </PreferenceCategory>
+    OLD Refactor -->
 
 </PreferenceScreen>

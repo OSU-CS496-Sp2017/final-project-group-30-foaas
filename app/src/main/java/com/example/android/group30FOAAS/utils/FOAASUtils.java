@@ -35,11 +35,11 @@ public class FOAASUtils {
         }
 
         if(!name.equals("")) {
-            builder.appendPath(":" + name);
+            builder.appendPath(name);
         }
 
         if(!from.equals("")) {
-            builder.appendPath(":" + from);
+            builder.appendPath(from);
         } else {
             Log.d(TAG, "ERROR: URI BUILD - From contains nothing");
         }

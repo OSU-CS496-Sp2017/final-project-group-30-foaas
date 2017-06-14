@@ -6,6 +6,8 @@
     <string name="share_chooser_title">Pick an app to share this insult</string>
     <string name="action_settings">Settings</string>
 
+
+    <!-- OLD Refactor -->
     <string name="pref_sort_key">pref_sort</string>
     <string name="pref_sort_title">Sort by</string>
     <string name="pref_sort_default">stars</string>
@@ -24,12 +26,22 @@
 
     <string name="pref_user_key">pref_user</string>
     <string name="pref_user_title">GitHub user</string>
+    <!-- END OLD -->
+
+    <string name="pref_user_name_key">pref_user_name</string>
+    <string name="pref_user_name_title">User Name</string>
+
+    <string name="pref_filter_key">pref_filter</string>
+    <string name="pref_filter_title">Profanity Filter</string>
+
     <string name="day_mode">Day Mode</string>
 
+    <!--
     <string-array name="insult_type_array">
         <item>Birthday</item>
         <item>Friendly</item>
         <item>Punny</item>
         <item>Custom</item>
     </string-array>
+    -->
 </resources>
