@@ -10,11 +10,11 @@ import com.example.android.group30FOAAS.utils.FOAASUtils;
 
 import java.util.ArrayList;
 
-public class FOAASRandomSearchAdapter extends RecyclerView.Adapter<FOAASRandomSearchAdapter.SearchResultViewHolder> {
+public class FOAASPersonalSearchAdapter extends RecyclerView.Adapter<FOAASPersonalSearchAdapter.SearchResultViewHolder> {
     private ArrayList<FOAASUtils.SearchResult> mSearchResultsList;
     private OnSearchResultClickListener mSearchResultClickListener;
 
-    public FOAASRandomSearchAdapter(RandomResultDetailActivity clickListener) {
+    public FOAASPersonalSearchAdapter(OnSearchResultClickListener clickListener) {
         mSearchResultClickListener = clickListener;
     }
 

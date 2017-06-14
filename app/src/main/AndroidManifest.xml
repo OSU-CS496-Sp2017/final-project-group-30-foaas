@@ -28,14 +28,14 @@
                 android:value="com.example.android.group30FOAAS.MainActivity" />
         </activity>
         <activity
-            android:name="com.example.android.group30FOAAS.PersonalResultDetailActivity"
+            android:name="com.example.android.group30FOAAS.RandomResultDetailActivity"
             android:parentActivityName="com.example.android.group30FOAAS.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.android.group30FOAAS.MainActivity" />
         </activity>
         <activity
-            android:name="com.example.android.group30FOAAS.RandomResultDetailActivity"
+            android:name="com.example.android.group30FOAAS.PersonalResultDetailActivity"
             android:parentActivityName="com.example.android.group30FOAAS.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"

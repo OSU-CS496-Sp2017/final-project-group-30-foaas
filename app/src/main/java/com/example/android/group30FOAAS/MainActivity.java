@@ -25,7 +25,6 @@ import com.example.android.group30FOAAS.utils.NetworkUtils;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Random;
 
 public class MainActivity extends AppCompatActivity
         implements FOAASPersonalSearchAdapter.OnSearchResultClickListener, FOAASRandomSearchAdapter.OnSearchResultClickListener, FOAASSearchAdapter.OnSearchResultClickListener, LoaderManager.LoaderCallbacks<String> {
@@ -39,8 +38,6 @@ public class MainActivity extends AppCompatActivity
     private ProgressBar mLoadingIndicatorPB;
     private TextView mLoadingErrorMessageTV;
     private FOAASSearchAdapter mFOAASSearchAdapter;
-    private FOAASPersonalSearchAdapter mFOAASPersonalSearchAdapter;
-    private FOAASRandomSearchAdapter mFOAASRandomSearchAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,7 +54,6 @@ public class MainActivity extends AppCompatActivity
 
         mFOAASSearchAdapter = new FOAASSearchAdapter(this);
         //mFOAASPersonalSearchAdapter = new FOAASPersonalSearchAdapter(this);
-        //mFOAASRandomPersonalSearchAdapter = new FOAASRandomSearchAdapter(this);
         mSearchResultsRV.setAdapter(mFOAASSearchAdapter);
 
         getSupportLoaderManager().initLoader(GITHUB_SEARCH_LOADER_ID, null, this);
@@ -68,7 +64,7 @@ public class MainActivity extends AppCompatActivity
             public void onClick(View v) {
                 String searchQuery = mSearchBoxET.getText().toString();
                 if (!TextUtils.isEmpty(searchQuery)) {
-                    startActivity(new Intent(MainActivity.this, PersonalResultDetailActivity.class));
+                    startActivity(new Intent(MainActivity.this, RandomResultDetailActivity.class));
                     doGitHubSearch(searchQuery);
                 }
             }
