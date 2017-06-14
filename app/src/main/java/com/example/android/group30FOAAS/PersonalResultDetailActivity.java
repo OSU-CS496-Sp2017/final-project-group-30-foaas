@@ -1,22 +1,17 @@
 package com.example.android.group30FOAAS;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.support.v4.app.LoaderManager;
 import android.support.v4.content.AsyncTaskLoader;
 import android.support.v4.content.Loader;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.preference.PreferenceManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
@@ -25,14 +20,13 @@ import com.example.android.group30FOAAS.utils.NetworkUtils;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Random;
 
 public class PersonalResultDetailActivity extends AppCompatActivity
-        implements LoaderManager.LoaderCallbacks<String>{
+        implements FOAASPersonalSearchAdapter.OnSearchResultClickListener, LoaderManager.LoaderCallbacks<String>{
     private TextView mSearchResultNameTV;
     private TextView mSearchResultDescriptionTV;
     private TextView mSearchResultStarsTV;
-    private TextView mSubtitleTV;
+    //private TextView mSubtitleTV;
     private FOAASUtils.SearchResult mSearchResult;
     private ProgressBar mLoadingIndicatorPB;
     private RecyclerView rv_personal_search_results;
@@ -40,7 +34,7 @@ public class PersonalResultDetailActivity extends AppCompatActivity
     private static final int FOAAS_LOADER_ID = 0;
     private TextView mLoadingErrorMessageTV;
     private FOAASPersonalSearchAdapter mFOAASPersonalSearchAdapter;
-    private static final String TAG = MainActivity.class.getSimpleName();
+    private static final String TAG = PersonalResultDetailActivity.class.getSimpleName();
 
 
 
@@ -52,11 +46,28 @@ public class PersonalResultDetailActivity extends AppCompatActivity
 
         mLoadingIndicatorPB = (ProgressBar)findViewById(R.id.pb_loading_indicator);
         mLoadingErrorMessageTV = (TextView)findViewById(R.id.tv_loading_error_message);
-        rv_personal_search_results = (RecyclerView)findViewById(R.id.rv_search_results);
-        mSubtitleTV = (TextView)findViewById(R.id.tv_subtitle);
+        rv_personal_search_results = (RecyclerView)findViewById(R.id.rv_personal_result);
+        //mSubtitleTV = (TextView)findViewById(R.id.tv_subtitle);
 
-        mFOAASPersonalSearchAdapter = new FOAASPersonalSearchAdapter((FOAASPersonalSearchAdapter.OnSearchResultClickListener) this);
+        mFOAASPersonalSearchAdapter = new FOAASPersonalSearchAdapter(this);
+
+        if(mFOAASPersonalSearchAdapter == null)
+        {
+            Log.d(TAG, "Adapter is null");
+        } else
+        {
+            Log.d(TAG, "help pls");
+        }
+        if(rv_personal_search_results == null){
+            Log.d(TAG, "rv_personal_search_results IS NULL");
+        }
+        if(mLoadingErrorMessageTV==null){
+            Log.d(TAG, "mLoadingErrorMessageTV is NULL");
+        }
+
         rv_personal_search_results.setAdapter(mFOAASPersonalSearchAdapter);
+        rv_personal_search_results.setLayoutManager(new LinearLayoutManager(this));
+        rv_personal_search_results.setHasFixedSize(true);
         //mSearchResultNameTV = (TextView)findViewById(R.id.tv_search_result_name);
         //mSearchResultDescriptionTV = (TextView)findViewById(R.id.tv_search_result_description);
         //mSearchResultStarsTV = (TextView)findViewById(R.id.tv_search_result_stars);
@@ -95,6 +106,12 @@ public class PersonalResultDetailActivity extends AppCompatActivity
             default:
                 return super.onOptionsItemSelected(item);
         }
+    }
+    @Override
+    public void onSearchResultClick(FOAASUtils.SearchResult searchResult) {
+        Intent intent = new Intent(this, ListResultDetailActivity.class);
+        intent.putExtra(FOAASUtils.SearchResult.EXTRA_SEARCH_RESULT, searchResult);
+        startActivity(intent);
     }
 
     @Override
