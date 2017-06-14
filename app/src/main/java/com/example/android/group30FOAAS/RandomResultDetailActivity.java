@@ -1,11 +1,11 @@
 package com.example.android.group30FOAAS;
 
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.v4.app.LoaderManager;
 import android.support.v4.content.AsyncTaskLoader;
 import android.support.v4.content.Loader;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -20,6 +20,7 @@ import com.example.android.group30FOAAS.utils.NetworkUtils;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Random;
 
 public class RandomResultDetailActivity extends AppCompatActivity
         implements FOAASRandomSearchAdapter.OnSearchResultClickListener, LoaderManager.LoaderCallbacks<String>{
@@ -92,6 +93,24 @@ public class RandomResultDetailActivity extends AppCompatActivity
         Bundle argsBundle = new Bundle();
         argsBundle.putString(SEARCH_URL_KEY, search);
         getSupportLoaderManager().restartLoader(FOAAS_LOADER_ID, argsBundle, this);
+    }
+
+    public String randInsult()
+    {
+        // getting string array resource
+        String[] insults = getResources().getStringArray(R.array.insults_from_only);
+
+        // set up rand
+        Random rand = new Random();
+
+        // get rand
+        int n = rand.nextInt(34) + 1;
+
+        // returning
+        // like 90% sure that works, otherwise use this
+        // String ret = insults[n];
+        // return ret;
+        return insults[n];
     }
 
     @Override
