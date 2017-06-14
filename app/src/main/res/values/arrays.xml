@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- OLD Refactor these-->
     <string-array name="pref_sort_entries">
         <item>Best match</item>
         <item>Stars</item>
         <item>Forks</item>
         <item>Most-recently updated</item>
     </string-array>
-    
+
     <string-array name="pref_sort_values">
         <item></item>
         <item>stars</item>
@@ -34,5 +35,75 @@
         <item>python</item>
         <item>ruby</item>
         <item>swift</item>
+    </string-array>
+    <!-- END OLD -->
+
+    <!-- This is an array of insults that are sent with an item and the user's name -->
+    <string-array name="insults_from_only">
+        <item>bag</item>
+        <item>because</item>
+        <item>bucket</item>
+        <item>byt</item>
+        <item>cool</item>
+        <item>diabetes</item>
+        <item>everyone</item>
+        <item>family</item>
+        <item>fascinating</item>
+        <item>flying</item>
+        <item>give</item>
+        <item>horse</item>
+        <item>life</item>
+        <item>looking</item>
+        <item>maybe</item>
+        <item>me</item>
+        <item>mornin</item>
+        <item>no</item>
+        <item>pink</item>
+        <item>retard</item>
+        <item>ridiculous</item>
+        <item>ridiculous</item>
+        <item>rtfm</item>
+        <item>sake</item>
+        <item>shit</item>
+        <item>single</item>
+        <item>thanks</item>
+        <item>that</item>
+        <item>this</item>
+        <item>too</item>
+        <item>tucker</item>
+        <item>what</item>
+        <item>zayn</item>
+        <item>zero</item>
+    </string-array>
+
+    <!-- This is an array of insults that are sent with the item, who it is to, and the user's name -->
+    <string-array name="insults_from_to">
+        <item>back</item>
+        <item>bday</item>
+        <item>blackadder</item>
+        <item>bm</item>
+        <item>bus</item>
+        <item>chainsaw</item>
+        <item>cocksplat</item>
+        <item>dalton</item>
+        <item>deraadt</item>
+        <item>donut</item>
+        <item>ing</item>
+        <item>king</item>
+        <item>linus</item>
+        <item>look</item>
+        <item>madison</item>
+        <item>nugget</item>
+        <item>off</item>
+        <item>outside</item>
+        <item>problem</item>
+        <item>shakespeare</item>
+        <item>shutup</item>
+        <item>think</item>
+        <item>thinking</item>
+        <item>thumbs</item>
+        <item>xmas</item>
+        <item>yoda</item>
+        <item>you</item>
     </string-array>
 </resources>
