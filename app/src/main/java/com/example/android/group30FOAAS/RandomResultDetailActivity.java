@@ -221,50 +221,5 @@ public class RandomResultDetailActivity extends AppCompatActivity
     public void onLoaderReset(Loader<String> loader) {
         // Nothing to do...
     }
-
-
-    public String randInsult()
-    {
-        // set up rand
-        Random rand = new Random();
-        // get rand
-        int n = rand.nextInt(34) + 1;
-        String ret = null;
-        if(n == 1) {ret = "awesome";}
-        else if (n == 2) {ret = "bag";}
-        else if (n == 3) {ret = "because";}
-        else if (n == 4) {ret = "bucket";}
-        else if (n == 5) {ret = "bye";}
-        else if (n == 6) {ret = "cool";}
-        else if (n == 7) {ret = "diabetes";}
-        else if (n == 8) {ret = "everyone";}
-        else if (n == 9) {ret = "family";}
-        else if (n == 10) {ret = "fascinating";}
-        else if (n == 11) {ret = "flying";}
-        else if (n == 12) {ret = "give";}
-        else if (n == 13) {ret = "horse";}
-        else if (n == 14) {ret = "life";}
-        else if (n == 15) {ret = "looking";}
-        else if (n == 16) {ret = "maybe";}
-        else if (n == 17) {ret = "me";}
-        else if (n == 18) {ret = "mornin";}
-        else if (n == 19) {ret = "no";}
-        else if (n == 20) {ret = "pink";}
-        else if (n == 21) {ret = "retard";}
-        else if (n == 22) {ret = "ridiculous";}
-        else if (n == 23) {ret = "rtfm";}
-        else if (n == 24) {ret = "sake";}
-        else if (n == 25) {ret = "shit";}
-        else if (n == 26) {ret = "single";}
-        else if (n == 27) {ret = "thanks";}
-        else if (n == 28) {ret = "that";}
-        else if (n == 29) {ret = "this";}
-        else if (n == 30) {ret = "too";}
-        else if (n == 31) {ret = "tucker";}
-        else if (n == 32) {ret = "what";}
-        else if (n == 33) {ret = "zayn";}
-        else if (n == 34) {ret = "zero";}
-        return ret;
-    }
-
+    
 }
