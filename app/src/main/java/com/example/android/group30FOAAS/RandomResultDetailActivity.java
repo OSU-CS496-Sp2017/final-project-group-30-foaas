@@ -1,12 +1,14 @@
 package com.example.android.group30FOAAS;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.LoaderManager;
 import android.support.v4.app.ShareCompat;
 import android.support.v4.content.AsyncTaskLoader;
 import android.support.v4.content.Loader;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.preference.PreferenceManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -86,9 +88,12 @@ public class RandomResultDetailActivity extends AppCompatActivity
 
     private void doSearch()
     {
-        String type = "bag";
+        SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);
+        String type = randInsult();
+        //String type = "bag";
         String name = "";
-        String from = "me";
+        //String from = "me";
+        String from =  sharedPrefs.getString(getString(R.string.pref_user_name_key), "");
         String search = FOAASUtils.buildFOAASURL(type, name, from);
 
         Bundle argsBundle = new Bundle();
