@@ -58,7 +58,7 @@ public class FOAASRandomSearchAdapter extends RecyclerView.Adapter<FOAASRandomSe
         }
 
         public void bind(FOAASUtils.SearchResult searchResult) {
-            mSearchResultTV.setText(searchResult.subtitle);
+            mSearchResultTV.setText(searchResult.message);
         }
 
         @Override

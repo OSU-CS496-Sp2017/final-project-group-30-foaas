@@ -20,6 +20,7 @@ public class NetworkUtils {
                 .build();
         Response response = mHTTPClient.newCall(request).execute();
 
+
         try {
             return response.body().string();
         } finally {

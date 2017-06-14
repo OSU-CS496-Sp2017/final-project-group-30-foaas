@@ -3,9 +3,10 @@ package com.example.android.group30FOAAS.utils;
 import android.net.Uri;
 import android.util.Log;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -48,23 +49,42 @@ public class FOAASUtils {
     }
 
     public static ArrayList<SearchResult> parseFOAASResultsJSON(String searchResultsJSON) {
-        try {
-            JSONObject searchResultsObj = new JSONObject(searchResultsJSON);
-            JSONArray searchResultsItems = searchResultsObj.getJSONArray("items");
+
+            Document doc = Jsoup.parse(searchResultsJSON);
+            Elements metaTags = doc.getElementsByTag("meta");
+            String ret_content = null;
+
+            for(Element metaTag: metaTags)
+            {
+                String content = metaTag.attr("content");
+                String name = metaTag.attr("name");
+
+                Log.d(TAG, "parseFOAASResultsJSON: name: " + name);
+
+                if("twitter:description".equals(name))
+                {
+                    Log.d(TAG, "parseFOAASResultsJSON: FOUND: " + content);
+                    ret_content = content;
+                }
+            }
+
+
+            Log.d(TAG, "parseFOAASResultsJSON: searchResultsJSON: " + searchResultsJSON);
+            Log.d(TAG, "parseFOAASResultsJSON: new string: " + ret_content);
 
             ArrayList<SearchResult> searchResultsList = new ArrayList<SearchResult>();
+            SearchResult searchResult = new SearchResult();
+            searchResult.message = ret_content;
+            searchResultsList.add(searchResult);
 
-            for (int i = 0; i < searchResultsItems.length(); i++) {
-                SearchResult searchResult = new SearchResult();
-                JSONObject searchResultItem = searchResultsItems.getJSONObject(i);
-                searchResult.message = searchResultItem.getString("message");
-                searchResult.subtitle = searchResultItem.getString("subtitle");
-                searchResultsList.add(searchResult);
-                Log.d(TAG, "VALID RUN: Json Response = " + searchResult);
-            }
+            //for (int i = 0; i < searchResultsItems.length(); i++) {
+            //    SearchResult searchResult = new SearchResult();
+            //    JSONObject searchResultItem = searchResultsItems.getJSONObject(i);
+            //    searchResult.message = searchResultItem.getString("message");
+            //    searchResult.subtitle = searchResultItem.getString("subtitle");
+            //    searchResultsList.add(searchResult);
+            //    Log.d(TAG, "VALID RUN: Json Response = " + searchResult);
+            //}
             return searchResultsList;
-        } catch (JSONException e) {
-            return null;
-        }
     }
 }

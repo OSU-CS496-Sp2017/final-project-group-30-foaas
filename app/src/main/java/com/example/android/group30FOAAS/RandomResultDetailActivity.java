@@ -211,6 +211,7 @@ public class RandomResultDetailActivity extends AppCompatActivity
             mLoadingErrorMessageTV.setVisibility(View.INVISIBLE);
             rv_random_search_results.setVisibility(View.VISIBLE);
             ArrayList<FOAASUtils.SearchResult> searchResultsList = FOAASUtils.parseFOAASResultsJSON(data);
+            Log.d(TAG, "onLoadFinished: array: " + searchResultsList);
             mFOAASRandomSearchAdapter.updateSearchResults(searchResultsList);
         } else {
             rv_random_search_results.setVisibility(View.INVISIBLE);
