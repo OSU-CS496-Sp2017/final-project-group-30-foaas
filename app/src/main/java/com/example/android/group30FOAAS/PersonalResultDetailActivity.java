@@ -51,20 +51,6 @@ public class PersonalResultDetailActivity extends AppCompatActivity
 
         mFOAASPersonalSearchAdapter = new FOAASPersonalSearchAdapter(this);
 
-        if(mFOAASPersonalSearchAdapter == null)
-        {
-            Log.d(TAG, "Adapter is null");
-        } else
-        {
-            Log.d(TAG, "help pls");
-        }
-        if(rv_personal_search_results == null){
-            Log.d(TAG, "rv_personal_search_results IS NULL");
-        }
-        if(mLoadingErrorMessageTV==null){
-            Log.d(TAG, "mLoadingErrorMessageTV is NULL");
-        }
-
         rv_personal_search_results.setAdapter(mFOAASPersonalSearchAdapter);
         rv_personal_search_results.setLayoutManager(new LinearLayoutManager(this));
         rv_personal_search_results.setHasFixedSize(true);
